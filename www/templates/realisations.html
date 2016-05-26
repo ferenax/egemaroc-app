@@ -1,0 +1,126 @@
+<ion-view view-title="Réalisations">
+
+
+  <ion-content has-bouncing="false" id="realisations">
+
+    <div class="header-realisations">
+      <div class="row">
+        <div class=" col col-50">
+          <h2 class="title">Nos projets,<br/>des
+            clients satisfaits.</h2></div>
+
+        <div class="col"><img src="img/realisation.png"></div>
+      </div>
+    </div>
+
+    <ion-list class="content-realisations">
+
+      <ion-item ng-repeat="partner in partners | filter : {category:filtText}" class="item item-image">
+        <img class="caption__media" ng-src="{{partner.pictureUrl}}">
+        <div class="caption__overlay">
+          <h1 class="caption__overlay__title item-text-wrap">{{partner.name}}</h1>
+          <ul class=" caption__overlay__content">
+            {{partner.description}}
+
+          </ul>
+
+        </div>
+
+      </ion-item>
+
+
+    </ion-list>
+
+
+  </ion-content>
+
+
+  <div id="fixedbutton">
+    <ul id="button-list">
+
+      <li class="hidden" ng-class="{active:isSelected(8)}"><h5>Restaurants</h5>
+        <button class="button button-categ fx-button" ng-click="select(8)"><i class="fa fa-cutlery" aria-hidden="true"></i></button>
+      </li>
+      <li class="hidden" ng-class="{active:isSelected(7)}"><h5>Hospitalier</h5>
+        <button class="button button-categ fx-button" ng-click="select(7)"><i class="fa fa-medkit" aria-hidden="true"></i></button>
+      </li>
+      <li class="hidden" ng-class="{active:isSelected(6)}"><h5>Bureaux</h5>
+        <button class="button  button-categ fx-button" ng-click="select(6)"><i class="fa fa-briefcase" aria-hidden="true"></i></button>
+      </li>
+      <li class="hidden" ng-class="{active:isSelected(5)}"><h5>Industriel</h5>
+        <button class="button button-categ fx-button" ng-click="select(5)"><i class="fa fa-industry" aria-hidden="true"></i></button>
+      </li>
+      <li class="hidden" ng-class="{active:isSelected(4)}"><h5>Habitation</h5>
+        <button class="button button-categ fx-button" ng-click="select(4)"><i class="fa fa-home" aria-hidden="true"></i></button>
+      </li>
+      <li class="hidden" ng-class="{active:isSelected(3)}"><h5>Touristique</h5>
+        <button class="button button-categ fx-button" ng-click="select(3)"><i class="fa fa-suitcase" aria-hidden="true"></i></button>
+      </li>
+      <li class="hidden" ng-class="{active:isSelected(2)}"><h5>Energie</h5>
+        <button class="button button-categ fx-button" ng-click="select(2)"><i class="fa fa-sun-o" aria-hidden="true"></i></button>
+      </li>
+      <li class="hidden" ng-class="{active:isSelected(1)}"><h5>All</h5>
+        <button class="button button-categ fx-button" ng-click="select(1)"><i class="fa fa-minus" aria-hidden="true"></i></button>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <div class="filter-overlay"></div>
+
+  <button id="btn-toggle" class=" button button-toggle  fx-button"
+          style="clear:both;"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+  <script>
+
+    var $toggle = false;
+    jQuery(".button-toggle, .button-categ").click(function () {
+
+      if(!jQuery(".filter-overlay").hasClass('overlay-shown')) {
+        jQuery(".filter-overlay").addClass('overlay-shown');
+      }
+
+      else {
+        jQuery(".filter-overlay").removeClass('overlay-shown');
+      }
+
+      jQuery("#button-list li").each(function (i, li) {
+        var $list = jQuery(this).closest('ul');
+
+        $list.delay(50).queue(function () {
+          if (jQuery(li).hasClass('hidden')) {
+            jQuery(li).removeClass('hidden');
+
+            jQuery(li).addClass('shown');
+            $list.dequeue();
+            $toggle = true;
+
+
+            jQuery(".filter-overlay").click(function () {
+
+              jQuery(li).removeClass('shown');
+              jQuery(".filter-overlay").removeClass('overlay-shown');
+
+              jQuery(li).addClass('hidden');
+              $list.dequeue();
+
+            })
+          }
+
+
+          else if (jQuery(li).hasClass('shown')) {
+
+            jQuery(li).removeClass('shown');
+
+            jQuery(li).addClass('hidden');
+            $list.dequeue();
+          }
+        });
+      });
+
+    });
+
+
+  </script>
+
+</ion-view>

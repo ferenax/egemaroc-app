@@ -1,6 +1,6 @@
 angular.module('egemaroc.controllers', [])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $cordovaLaunchNavigator) {
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -114,41 +114,4 @@ angular.module('egemaroc.controllers', [])
         $rootScope.viewColor = '#6ec33f';
         $rootScope.viewBorder = '#6ec33f';
     });
-});
-
-app.controller('CheckController', function ($scope, $cordovaInAppBrowser) {
-
-    var scheme;
-
-    // Don't forget to add the org.apache.cordova.device plugin!
-    if (device.platform === 'iOS') {
-        scheme = 'twitter://';
-    } else if (device.platform === 'Android') {
-        scheme = 'com.twitter.android';
-    }
-
-    appAvailability.check(
-        scheme, // URI Scheme
-        function () { // Success callback
-            window.open('twitter://user?screen_name=gajotres', '_system', 'location=no');
-            console.log('Twitter is available');
-        }
-        , function () { // Error callback
-            window.open('https://twitter.com/gajotres', '_system', 'location=no');
-            console.log('Twitter is not available');
-        }
-    );
-
-    appAvailability.check(
-        scheme, // URI Scheme
-        function () { // Success callback
-            window.open('twitter://user?screen_name=gajotres', '_system', 'location=no');
-            console.log('Twitter is available');
-        }
-        , function () { // Error callback
-            window.open('https://twitter.com/gajotres', '_system', 'location=no');
-            console.log('Twitter is not available');
-        }
-    );
-
 });

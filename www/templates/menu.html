@@ -1,44 +1,43 @@
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable" ng-style="{'background-color': viewColor,'border-color' : viewBorder}">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable" ng-style="{'background-color': viewColor,'border-color' : viewBorder}">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
 
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
-      <ion-nav-buttons side="secondary">
-        <div class="buttons">
-          <a class="button button-icon icon ion-ios-home-outline"
-                  ui-sref="app.home"></a>
-        </div>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="secondary">
+                <div class="buttons">
+                    <a class="button button-icon icon ion-ios-home-outline" ui-sref="app.home"></a>
+                </div>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <ion-content>
-      <ion-list>
-        <ion-item menu-close href="#/app/presentation">
-          Présentation
-        </ion-item>
-        <ion-item menu-close href="#/app/metiers">
-          Métiers
-        </ion-item>
-        <ion-item menu-close href="#/app/realisations">
-          Réalisations
-        </ion-item>
-        <ion-item menu-close href="#/app/engagements">
-          Engagements
-        </ion-item>
-      </ion-list>
-      <section class="contact-bar">
-        <a href="tel:+212522989756"><i class="fa fa-phone"></i></a>
-        <a href="mailto:contact@egemaroc.com"><i class="fa fa-envelope"></i></a>
-        <a href="http://egemaroc.com"><i class="fa fa-globe"></i></a>
-      </section>
-    </ion-content>
-  </ion-side-menu>
+    <ion-side-menu side="left">
+        <ion-content ng-controller="CheckController">
+            <ion-list>
+                <ion-item menu-close href="#/app/presentation">
+                    Présentation
+                </ion-item>
+                <ion-item menu-close href="#/app/metiers">
+                    Métiers
+                </ion-item>
+                <ion-item menu-close href="#/app/realisations">
+                    Réalisations
+                </ion-item>
+                <ion-item menu-close href="#/app/engagements">
+                    Engagements
+                </ion-item>
+            </ion-list>
+            <section class="contact-bar">
+                <a href="tel:+212522989756"><i class="fa fa-phone"></i></a>
+                <a href="mailto:contact@egemaroc.com"><i class="fa fa-envelope"></i></a>
+                <a href="#" onclick="window.open('http://www.google.com/maps/place/33.57356651425803,-7.64095894061029', '_system', 'location=yes'); return false;"><i class="fa fa-map-marker"></i></a>
+            </section>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>

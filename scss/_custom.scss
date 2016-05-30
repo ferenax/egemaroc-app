@@ -144,9 +144,9 @@ ion-view[view-title="EGE"] ion-content {
 
 .content-pres {
   padding: 30px 20px;
-  background: linear-gradient(rgba(19, 128, 167, 0.9), rgba(19, 128, 167, 0.9)), url(../img/pres-bg.jpg) center center no-repeat;
-  background-size: cover;
-  height: 250%;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
   h4 {
     text-transform: uppercase;
     color: #fff;
@@ -169,10 +169,9 @@ ion-view[view-title="EGE"] ion-content {
   }
 }
 
-/*
- * METIERS PAGE
- */
-
+  /*
+   * METIERS PAGE
+   */
 .header-metiers {
   background-color: #079cff;
   margin: 0;
@@ -471,39 +470,59 @@ ion-view[view-title="EGE"] ion-content {
  */
 
 ion-side-menu {
-  background: #1A2980;
-  background: -webkit-linear-gradient(to left, #1A2980, #26D0CE);
-  background: linear-gradient(to left, #1A2980, #26D0CE);
+  background: #2F2F2F;
+  background: -webkit-linear-gradient(to left, #2F2F2F, #2F2F2F);
+  background: linear-gradient(to left, #2F2F2F, #2F2F2F);
   /*  background: #000 url(../img/menu-bg.jpg) center center no-repeat;*/
   ion-content {
-    display: table !important;
-    width: 100% !important;
-    height: 100% !important;
-    & > * {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
+    position: relative;
+    header {
+      height: 180px;
+      width: 100%;
+      display: block;
+      background: url(../img/menu-bg.jpg) center center no-repeat;
+      background-size: cover;
     }
     .contact-bar {
-      position: absolute;
-      bottom: 10px;
+      position: relative;
       left: 0;
       width: 100%;
       text-align: center;
       color: #f7f7f7;
       font-size: 20px;
+
+      .row {
+        padding: 0;
+      }
+
+      .col-33 {
+        height: 60px;
+        align-items: center;
+        border-right: 1px solid #404040;
+        border-top: 1px solid #404040;
+        border-bottom: 1px solid #404040;
+
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+
+      .list {
+        padding: 20px 10px;
+      }
+
       a {
-        display: inline-block;
+        display: table;
+        height: 60px;
+        width: 100%;
         text-decoration: none;
         color: inherit;
-        &:after {
-          content: "";
-          color: #ccc;
+        text-align: center;
+        font-size: 24px;
+
+        i {
           vertical-align: middle;
-          border-right: 1px solid #ccc;
-          font-size: 12px;
-          margin-left: 15px;
-          margin-right: 10px;
+          display: table-cell;
         }
       }
       a:nth-child(3):after {
@@ -523,6 +542,10 @@ ion-side-menu {
         border: none;
         background: none;
       }
+      span {
+        vertical-align: middle;
+        margin-left: 20px;
+      }
     }
   }
 }
@@ -537,6 +560,7 @@ ion-view[view-title="EGE"] .swiper-pagination-bullet {
 
 ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagination {
   bottom: 260px;
+
 }
 
 .filter-overlay {
@@ -559,3 +583,68 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
   visibility: visible;
 }
 
+
+/*
+ * VIDEO BACKGROUND (PRESENTATION)
+ */
+.video-overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 128, 167, 0.8);
+  z-index: -10;
+  position: absolute;
+}
+
+#bgvid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(../videos/ege_plomberie.mp4) no-repeat;
+  background-size: cover;
+
+}
+
+
+/*
+ * MENU ICONS
+ */
+
+.egecon {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle;
+}
+
+.egecon-leaf {
+  background-image: url(../img/icons/leaf.png);
+}
+
+.egecon-snow {
+  background-image: url(../img/icons/snowflake.png);
+}
+
+.egecon-sun {
+  background-image: url(../img/icons/sun.png);
+}
+
+.egecon-butterfly {
+  background-image: url(../img/icons/butterfly.png);
+}

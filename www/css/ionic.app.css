@@ -9937,9 +9937,9 @@ ion-view[view-title="EGE"] ion-content {
 
 .content-pres {
   padding: 30px 20px;
-  background: linear-gradient(rgba(19, 128, 167, 0.9), rgba(19, 128, 167, 0.9)), url(../img/pres-bg.jpg) center center no-repeat;
-  background-size: cover;
-  height: 250%; }
+  background: transparent;
+  position: relative;
+  overflow: hidden; }
   .content-pres h4 {
     text-transform: uppercase;
     color: #fff;
@@ -9959,8 +9959,8 @@ ion-view[view-title="EGE"] ion-content {
     font-weight: 300; }
 
 /*
- * METIERS PAGE
- */
+   * METIERS PAGE
+   */
 .header-metiers {
   background-color: #079cff;
   margin: 0;
@@ -10205,38 +10205,48 @@ ion-view[view-title="EGE"] ion-content {
  * SIDE MENU
  */
 ion-side-menu {
-  background: #1A2980;
-  background: -webkit-linear-gradient(to left, #1A2980, #26D0CE);
-  background: linear-gradient(to left, #1A2980, #26D0CE);
+  background: #2F2F2F;
+  background: -webkit-linear-gradient(to left, #2F2F2F, #2F2F2F);
+  background: linear-gradient(to left, #2F2F2F, #2F2F2F);
   /*  background: #000 url(../img/menu-bg.jpg) center center no-repeat;*/ }
   ion-side-menu ion-content {
-    display: table !important;
-    width: 100% !important;
-    height: 100% !important; }
-    ion-side-menu ion-content > * {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center; }
+    position: relative; }
+    ion-side-menu ion-content header {
+      height: 180px;
+      width: 100%;
+      display: block;
+      background: url(../img/menu-bg.jpg) center center no-repeat;
+      background-size: cover; }
     ion-side-menu ion-content .contact-bar {
-      position: absolute;
-      bottom: 10px;
+      position: relative;
       left: 0;
       width: 100%;
       text-align: center;
       color: #f7f7f7;
       font-size: 20px; }
+      ion-side-menu ion-content .contact-bar .row {
+        padding: 0; }
+      ion-side-menu ion-content .contact-bar .col-33 {
+        height: 60px;
+        align-items: center;
+        border-right: 1px solid #404040;
+        border-top: 1px solid #404040;
+        border-bottom: 1px solid #404040; }
+        ion-side-menu ion-content .contact-bar .col-33:last-of-type {
+          border-right: none; }
+      ion-side-menu ion-content .contact-bar .list {
+        padding: 20px 10px; }
       ion-side-menu ion-content .contact-bar a {
-        display: inline-block;
+        display: table;
+        height: 60px;
+        width: 100%;
         text-decoration: none;
-        color: inherit; }
-        ion-side-menu ion-content .contact-bar a:after {
-          content: "";
-          color: #ccc;
+        color: inherit;
+        text-align: center;
+        font-size: 24px; }
+        ion-side-menu ion-content .contact-bar a i {
           vertical-align: middle;
-          border-right: 1px solid #ccc;
-          font-size: 12px;
-          margin-left: 15px;
-          margin-right: 10px; }
+          display: table-cell; }
       ion-side-menu ion-content .contact-bar a:nth-child(3):after {
         display: none; }
   ion-side-menu ion-item.item {
@@ -10250,6 +10260,9 @@ ion-side-menu {
       ion-side-menu ion-item.item a.item-content.activated {
         border: none;
         background: none; }
+      ion-side-menu ion-item.item a.item-content span {
+        vertical-align: middle;
+        margin-left: 20px; }
 
 .swiper-slide:not(.swiper-slide-active) {
   opacity: 0 !important; }
@@ -10277,3 +10290,58 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
 .overlay-shown {
   display: block;
   visibility: visible; }
+
+/*
+ * VIDEO BACKGROUND (PRESENTATION)
+ */
+.video-overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 128, 167, 0.8);
+  z-index: -10;
+  position: absolute; }
+
+#bgvid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(../videos/ege_plomberie.mp4) no-repeat;
+  background-size: cover; }
+
+/*
+ * MENU ICONS
+ */
+.egecon {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle; }
+
+.egecon-leaf {
+  background-image: url(../img/icons/leaf.png); }
+
+.egecon-snow {
+  background-image: url(../img/icons/snowflake.png); }
+
+.egecon-sun {
+  background-image: url(../img/icons/sun.png); }
+
+.egecon-butterfly {
+  background-image: url(../img/icons/butterfly.png); }

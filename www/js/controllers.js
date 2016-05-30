@@ -173,4 +173,13 @@ angular.module('egemaroc.controllers', [])
       $rootScope.viewBorder = '#6ec33f';
     });
 
-  });
+
+})
+
+.controller('IntroController', function ($scope, $rootScope) {
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.viewColor = '#ffc107';
+        $rootScope.viewBorder = '#ffc107';
+    })
+});
+

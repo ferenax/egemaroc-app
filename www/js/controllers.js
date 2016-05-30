@@ -39,7 +39,7 @@ angular.module('egemaroc.controllers', [])
 })
 
 
-.controller('HomeCtrl', function ($scope, $stateParams, $rootScope) {
+.controller('HomeCtrl', function ($scope, $stateParams, $rootScope, $state) {
 
 
     $scope.options = {
@@ -142,9 +142,10 @@ angular.module('egemaroc.controllers', [])
 
 })
 
-.controller('IntroController', function ($scope, $rootScope) {
-    $scope.$on('$ionicView.beforeEnter', function () {
-        $rootScope.viewColor = '#ffc107';
-        $rootScope.viewBorder = '#ffc107';
-    })
+.controller('IntroController', function ($scope, $rootScope, $timeout, $state) {
+    $timeout(function () {
+        $state.go('app.metiers');
+    }, 1000);
+
+
 });

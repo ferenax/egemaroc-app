@@ -72,6 +72,17 @@ angular.module('egemaroc', ['ionic', 'egemaroc.controllers', 'ngCordova', 'ionic
         }
     })
 
+
+    .state('app.intro', {
+        url: '/intro'
+        , views: {
+            'menuContent': {
+                templateUrl: './templates/intro.html'
+                , controller: 'IntroController'
+            }
+        }
+    })
+
     .state('app.engagements', {
         url: '/engagements'
         , views: {

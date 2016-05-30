@@ -561,20 +561,17 @@ ion-view[view-title="EGE"] {
 }
 
 ion-view [view-title="Engagements"] {
-    
-    .slider{
-  position: absolute !important;
-  top: 0 ;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.slider-pager {
-	top: initial;
-	bottom: 60px !important;
-}
-    
+    .slider {
+        position: absolute !important;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .slider-pager {
+        top: initial;
+        bottom: 60px !important;
+    }
 }
 
 .filter-overlay {

@@ -1,6 +1,6 @@
 angular.module('egemaroc.controllers', [])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ImageCacheFactory, $http) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -9,9 +9,32 @@ angular.module('egemaroc.controllers', [])
     //$scope.$on('$ionicView.enter', function(e) {
     //});
 
+    var images = [];
+
     $scope.go = function (path) {
         $location.path(path);
     };
+
+    $http.get('js/data/partners.json')
+        .success(function (data) {
+            // The json data will now be in scope.
+            $scope.partners = data;
+
+
+
+            for (var i = 0; i < $scope.partners.length; i++) {
+                images.push($scope.partners[i].pictureUrl);
+            }
+
+            $ImageCacheFactory.Cache(images).then(function () {
+                console.log("worked");
+
+            }, function (failed) {
+                console.log("An image filed: " + failed);
+            });
+
+
+        });
 
 })
 
@@ -23,7 +46,8 @@ angular.module('egemaroc.controllers', [])
         loop: false
         , effect: 'fade'
         , speed: 500
-    , };
+        , autoplay: 3000
+    };
 
     $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
         // data.slider is the instance of Swiper
@@ -114,4 +138,6 @@ angular.module('egemaroc.controllers', [])
         $rootScope.viewColor = '#6ec33f';
         $rootScope.viewBorder = '#6ec33f';
     });
+
+
 });

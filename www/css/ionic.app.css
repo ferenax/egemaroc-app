@@ -9958,6 +9958,24 @@ ion-view[view-title="EGE"] ion-content {
     line-height: 18px;
     font-weight: 300; }
 
+#video-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(videos/ege_plomberie.mp4.mp4) no-repeat;
+  background-size: cover;
+  background-position: center; }
+
 /*
  * METIERS PAGE
  */
@@ -10251,11 +10269,22 @@ ion-side-menu {
         border: none;
         background: none; }
 
-.swiper-slide:not(.swiper-slide-active) {
+ion-view[view-title="EGE"] .swiper-slide:not(.swiper-slide-active) {
   opacity: 0 !important; }
 
-.swiper-pagination-bullet {
+ion-view[view-title="EGE"] .swiper-pagination-bullet {
   background: #fff; }
+
+ion-view [view-title="Engagements"] .slider {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+ion-view [view-title="Engagements"] .slider-pager {
+  top: initial;
+  bottom: 60px !important; }
 
 .filter-overlay {
   position: fixed;

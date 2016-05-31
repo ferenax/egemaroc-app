@@ -1,5 +1,6 @@
 {
     "jscodehints.detectedExclusions": [
-        "C:/Projects/egemaroc/platforms/android/cordova/lib/AndroidManifest.js"
+        "C:/Projects/egemaroc/platforms/android/cordova/lib/AndroidManifest.js",
+        "C:/Projects/egemaroc/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-inappbrowser/www/inappbrowser.js"
     ]
 }

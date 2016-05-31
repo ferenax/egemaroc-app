@@ -9,8 +9,6 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/ionic.app.css" rel="stylesheet">
 
-
-
     <!-- jQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -32,7 +30,15 @@
 </head>
 
 <body ng-app="egemaroc">
+    <div id="swiffycontainer" class="custom-overlay" style="width: 100%; height: auto">
+    </div>
     <ion-nav-view class="item-text-wrap"></ion-nav-view>
+    <script>
+        var stage = new swiffy.Stage(document.getElementById('swiffycontainer')
+            , swiffyobject, {});
+
+        stage.start();
+    </script>
 </body>
 
 </html>

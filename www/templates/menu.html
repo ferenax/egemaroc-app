@@ -1,4 +1,5 @@
 <ion-side-menus enable-menu-with-back-views="true">
+
     <ion-side-menu-content>
         <ion-nav-bar class="bar-stable" ng-style="{'background-color': viewColor,'border-color' : viewBorder}">
 
@@ -16,30 +17,41 @@
         <ion-nav-view name="menuContent"></ion-nav-view>
     </ion-side-menu-content>
 
-    <ion-side-menu side=" left ">
+    <ion-side-menu side="left">
         <ion-content>
+            <header></header>
+            <section class="contact-bar">
+                <div class="row">
+                    <div class="col-33">
+                        <a href="tel:+212522989756"><i class="fa fa-phone"></i></a>
+                    </div>
+                    <div class="col-33">
+                        <a href="mailto:contact@egemaroc.com"><i class="fa fa-envelope"></i></a>
+                    </div>
+                    <div class="col-33">
+                        <a href="#" onclick="window.open('http://www.google.com/maps/place/33.57356651425803,-7.64095894061029', '_system', 'location=yes');"><i
+              class="fa fa-map-marker"></i></a>
+                    </div>
+                </div>
+            </section>
             <ion-list>
-                <ion-item menu-close href="#/app/presentation ">
-                    Présentation
+                <ion-item menu-close href="#/app/presentation">
+                    <i class="egecon egecon-leaf"></i> <span>Présentation</span>
                 </ion-item>
-                <ion-item menu-close href="#/app/metiers ">
-                    Métiers
+                <ion-item menu-close href="#/app/metiers">
+                    <i class="egecon egecon-snow"></i> <span>Métiers</span>
                 </ion-item>
-                <ion-item menu-close href="#/app/realisations ">
-                    Réalisations
+                <ion-item menu-close href="#/app/realisations">
+                    <i class="egecon egecon-sun"></i> <span>Réalisations</span>
                 </ion-item>
-                <ion-item menu-close href="#/app/engagements ">
-                    Engagements
-                </ion-item>
-                <ion-item menu-close href="#/app/intro ">
-                    Intro
+                <ion-item menu-close href="#/app/engagements">
+                    <i class="egecon egecon-butterfly"></i> <span>Engagements</span>
                 </ion-item>
             </ion-list>
-            <section class="contact-bar ">
-                <a href="# " onclick="window.open( 'tel:+212522989756', '_system', 'location=yes'); "><i class="fa fa-phone "></i></a>
-                <a href="# " onclick="window.open( 'mailto:contact@egemaroc.com', '_system', 'location=yes'); "><i class="fa fa-envelope "></i></a>
-                <a href="# " onclick="window.open( 'http://www.google.com/maps/place/33.57356651425803,-7.64095894061029', '_system', 'location=yes'); "><i class="fa fa-map-marker "></i></a>
-            </section>
+
+
+
+
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>

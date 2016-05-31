@@ -1,6 +1,8 @@
 angular.module('egemaroc.controllers', [])
 
+
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ImageCacheFactory, $http) {
+
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -36,17 +38,28 @@ angular.module('egemaroc.controllers', [])
 
         });
 
+    $scope.$on('$ionicView.afterEnter', function () {
+        setTimeout(function () {
+            document.getElementById("swiffycontainer").style.display = "none";
+        }, 8000);
+    });
+
 })
 
 
-.controller('HomeCtrl', function ($scope, $stateParams, $rootScope, $state) {
+
+
+.controller('HomeCtrl', function ($scope, $stateParams, $rootScope) {
+
 
 
     $scope.options = {
+
         loop: false
         , effect: 'fade'
         , speed: 500
         , autoplay: 3000
+
     };
 
     $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
@@ -86,13 +99,17 @@ angular.module('egemaroc.controllers', [])
 })
 
 
-.controller('RealisationsController', function ($scope, $rootScope, $http) {
+.controller('RealisationsController', function ($scope, $rootScope, $http, $ionicScrollDelegate) {
     $scope.link = 1;
     $scope.filtText = '';
     $scope.$on('$ionicView.beforeEnter', function () {
         $rootScope.viewColor = '#e20000';
         $rootScope.viewBorder = '#e20000';
     });
+
+    $scope.scrollTop = function () {
+        $ionicScrollDelegate.scrollTop();
+    };
 
     $http.get('js/data/partners.json')
         .success(function (data) {
@@ -133,7 +150,32 @@ angular.module('egemaroc.controllers', [])
 })
 
 
-.controller('EngagementsController', function ($scope, $rootScope) {
+.controller('EngagementsController', function ($scope, $stateParams, $rootScope) {
+
+
+    $scope.options = {
+        loop: false
+        , effect: 'fade'
+        , speed: 500
+        , autoplay: 3000
+    };
+
+    $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
+        // data.slider is the instance of Swiper
+        $scope.slider = data.slider;
+    });
+
+    $scope.$on("$ionicSlides.slideChangeStart", function (event, data) {
+        console.log('Slide change is beginning');
+    });
+
+    $scope.$on("$ionicSlides.slideChangeEnd", function (event, data) {
+        // note: the indexes are 0-based
+        $scope.activeIndex = data.activeIndex;
+        $scope.previousIndex = data.previousIndex;
+    });
+
+
     $scope.$on('$ionicView.beforeEnter', function () {
         $rootScope.viewColor = '#6ec33f';
         $rootScope.viewBorder = '#6ec33f';
@@ -142,10 +184,11 @@ angular.module('egemaroc.controllers', [])
 
 })
 
+
 .controller('IntroController', function ($scope, $rootScope, $timeout, $state) {
     $timeout(function () {
-        $state.go('app.metiers');
-    }, 1000);
+        $state.go('app.home');
+    }, 3000);
 
 
 });

@@ -83,13 +83,13 @@ angular.module('egemaroc.controllers', [])
     })
   })
 
-  .controller('MetiersController', function ($scope, $rootScope) {
+  .controller('MetiersController', function ($scope, $rootScope, $ionicScrollDelegate, $window) {
     $scope.$on('$ionicView.beforeEnter', function () {
       $rootScope.viewColor = '#079cff';
       $rootScope.viewBorder = '#079cff';
     });
 
-    $scope.$on("$ionicView.loaded", function() {
+/*    $scope.$on("$ionicView.loaded", function() {
       video = document.getElementsByTagName("video")[0];
       currentVid = 1;
       video.play();
@@ -107,7 +107,46 @@ angular.module('egemaroc.controllers', [])
         });
       }
 
-    });
+    });*/
+
+
+    $scope.myScroll = function() {
+      var videos = document.getElementsByTagName("video"),
+        fraction = 0.8;
+
+      for(var i = 0; i < videos.length; i++) {
+
+        var video = videos[i];
+
+        console.log("video.offsetTop " + video.offsetTop);
+        console.log("video.offsetWidth " + video.offsetWidth);
+        console.log("video.offsetheight " + video.offsetHeight);
+        console.log("window.pageXOffset " + $window.pageXOffset);
+        console.log("window.pageYOffset " + $window.pageYOffset);
+        console.log("window.innerWidth " + $window.innerWidth);
+        console.log("window.innerHeight " + $window.innerHeight);
+        console.log("top " + $ionicScrollDelegate.$getByHandle('scrollItem').getScrollPosition().top);
+        console.log("left " + $ionicScrollDelegate.$getByHandle('scrollItem').getScrollPosition().left);
+
+        var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
+          b = y + h, //bottom
+          visibleX, visibleY, visible;
+
+        visibleX = Math.max(0, Math.min(w, $ionicScrollDelegate.$getByHandle('scrollItem').getScrollPosition().left + $window.innerWidth - x, r - $ionicScrollDelegate.$getByHandle('scrollItem').getScrollPosition().left));
+        visibleY = Math.max(0, Math.min(h, $ionicScrollDelegate.$getByHandle('scrollItem').getScrollPosition().top + $window.innerHeight - y, b - $ionicScrollDelegate.$getByHandle('scrollItem').getScrollPosition().top));
+
+        visible = visibleX * visibleY / (w * h);
+
+        if (visible > fraction) {
+          video.play();
+        } else {
+          video.pause();
+        }
+
+      }
+    };
+
+
 
   })
 

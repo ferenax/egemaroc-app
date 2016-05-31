@@ -88,6 +88,27 @@ angular.module('egemaroc.controllers', [])
       $rootScope.viewColor = '#079cff';
       $rootScope.viewBorder = '#079cff';
     });
+
+    $scope.$on("$ionicView.loaded", function() {
+      video = document.getElementsByTagName("video")[0];
+      currentVid = 1;
+      video.play();
+      video.addEventListener('ended', function () {
+        myFunction(video, currentVid);
+      });
+
+      function myFunction(video, currentVid) {
+        video = document.getElementsByTagName("video")[currentVid];
+        currentVid = currentVid + 1;
+        if (currentVid == 4) currentVid = 0;
+        video.play();
+        video.addEventListener('ended', function () {
+          myFunction(video, currentVid);
+        });
+      }
+
+    });
+
   })
 
 

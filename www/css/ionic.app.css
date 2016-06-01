@@ -9916,25 +9916,24 @@ ion-view[view-title="EGE"] ion-content {
     text-align: center;
     max-width: 100%; }
 
-/*
- * PRESENTATION PAGE
- */
-.header-pres {
+.ege-header {
   margin: 0;
-  background-color: #ffc107;
   padding: 20px 0px; }
-  .header-pres h2 {
+  .ege-header h2 {
     color: #fff;
     padding-left: 20px;
     text-transform: uppercase;
-    font-size: 200%;
+    font-size: 26px;
     font-family: 'Oswald', sans-serif;
     font-weight: 700; }
-  .header-pres img {
+  .ege-header img {
     max-width: 100%; }
-  .header-pres .col:nth-child(2) {
+  .ege-header .col:nth-child(2) {
     text-align: center; }
 
+/*
+ * PRESENTATION PAGE
+ */
 .content-pres {
   padding: 30px 20px;
   background: transparent;
@@ -9961,22 +9960,6 @@ ion-view[view-title="EGE"] ion-content {
 /*
    * METIERS PAGE
    */
-.header-metiers {
-  background-color: #079cff;
-  margin: 0;
-  padding: 20px 0; }
-  .header-metiers h2 {
-    color: #fff;
-    padding-left: 20px;
-    text-transform: uppercase;
-    font-size: 200%;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700; }
-  .header-metiers img {
-    max-width: 100%; }
-  .header-metiers .col:nth-child(2) {
-    text-align: center; }
-
 .metiers-info-wrapper {
   width: 100%;
   background-color: #F7F7F7;
@@ -9999,22 +9982,6 @@ ion-view[view-title="EGE"] ion-content {
 /*
  * REALISATIONS PAGE
  */
-.header-realisations {
-  margin: 0;
-  background-color: #e20000;
-  padding: 20px 0px; }
-  .header-realisations h2 {
-    color: #fff;
-    padding-left: 20px;
-    text-transform: uppercase;
-    font-size: 200%;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700; }
-  .header-realisations img {
-    max-width: 100%; }
-  .header-realisations .col:nth-child(2) {
-    text-align: center; }
-
 .content-realisations {
   margin: 0; }
 
@@ -10174,22 +10141,6 @@ ion-view[view-title="EGE"] ion-content {
 /*
  * ENGAGEMENTS PAGE
  */
-.header-engagements {
-  margin: 0;
-  background-color: #6ec33f;
-  padding: 20px 0px; }
-  .header-engagements h2 {
-    color: #fff;
-    padding-left: 20px;
-    text-transform: uppercase;
-    font-size: 200%;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700; }
-  .header-engagements img {
-    max-width: 100%; }
-  .header-engagements .col:nth-child(2) {
-    text-align: center; }
-
 .certification .certification-ribbon {
   padding: 20px;
   text-align: center; }
@@ -10345,3 +10296,23 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
 
 .egecon-butterfly {
   background-image: url(../img/icons/butterfly.png); }
+
+@media all and (max-width: 320px) {
+  .ege-header h2 {
+    font-size: 26px; } }
+
+@media all and (min-width: 320px) and (max-width: 567px) {
+  .ege-header h2 {
+    font-size: 35px; } }
+
+@media all and (min-width: 568px) and (max-width: 767px) {
+  .ege-header h2 {
+    font-size: 45px; } }
+
+@media all and (min-width: 768px) and (max-width: 1048px) {
+  .ege-header h2 {
+    font-size: 55px; } }
+
+@media all and (min-width: 1049px) {
+  .ege-header h2 {
+    font-size: 65px; } }

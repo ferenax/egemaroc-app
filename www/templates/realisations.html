@@ -17,22 +17,24 @@
       </div>
     </div>
 
-    <ion-list class="content-realisations">
+    <div class="content-realisations row responsive-sm">
 
-      <ion-item ng-repeat="partner in partners | filter : {category:filtText}" class="item item-image">
-        <img class="caption__media" ng-src="{{partner.pictureUrl}}">
-        <div class="caption__overlay">
-          <h1 class="caption__overlay__title item-text-wrap">{{partner.name}}</h1>
-          <ul class=" caption__overlay__content">
-            {{partner.description}}
-          </ul>
+      <div ng-repeat="partner in partners | filter : {category:filtText}" class="col col-50">
+        <article class="caption">
+          <img class="caption__media" ng-src="{{partner.pictureUrl}}">
+          <div class="caption__overlay">
+            <h1 class="caption__overlay__title item-text-wrap">{{partner.name}}</h1>
+            <ul class=" caption__overlay__content">
+              {{partner.description}}
+            </ul>
+          </div>
+        </article>
 
-        </div>
 
-      </ion-item>
+      </div>
 
 
-    </ion-list>
+    </div>
 
 
   </ion-content>

@@ -2,7 +2,7 @@
   <ion-content has-bouncing="false" on-scroll="myScroll()" delegate-handle="scrollItem" id="metiers">
 
     <div class="ege-header" ng-style="{'background':viewColor}">
-      <div class="row">{}
+      <div class="row">
         <div class="col col-center col-50">
           <h2>Nos metiers,<br/>un savoir<br/> faire.</h2></div>
 
@@ -12,24 +12,24 @@
       </div>
     </div>
 
-    <div class="row responsive-sm">
+    <div class="row responsive-lg">
 
-      <div class="metiers-info-wrapper">
-        <div class="clearfix">
+      <div class="metiers-info-wrapper col responsive-sm">
+        <div class="col clearfix">
           <video preload="auto" class=" clearfix" style="width: 100%; height: auto;" webkit-playsinline
                  poster="img/thumbs/ege_energie.png">
             <source src="videos/ege_energies_renouvelables.mp4" type='video/webm'/>
             <source src="videos/ege_energies_renouvelables.mp4" type='video/mp4'/>
           </video>
         </div>
-        <div class="metiers-info">
+        <div class="col metiers-info">
           <h4>EFFICACITÉ ENERGÉTIQUE ET EnR</h4>
           <p>Consommez la même quantité d’energie et produisez-en trois fois plus. Nos systèmes de récupération
             d’énergie incluent les puits canadiens, la pompe à chaleur, ou l’énergie solaire.</p>
         </div>
       </div>
 
-      <div class="metiers-info-wrapper">
+      <div class="metiers-info-wrapper col responsive-sm">
         <div class="clearfix">
           <video preload="auto" class="clearfix" style="width: 100%; height: auto;" webkit-playsinline
                  poster="img/thumbs/ege_climatisation.png">
@@ -44,7 +44,9 @@
         </div>
       </div>
 
-      <div class="metiers-info-wrapper">
+    </div>
+    <div class="row responsive-lg">
+      <div class="metiers-info-wrapper col responsive-sm">
         <div class="clearfix">
           <video preload="auto" class="clearfix" style="width: 100%; height: auto;" webkit-playsinline
                  poster="img/thumbs/ege_chauffage.png">
@@ -59,7 +61,7 @@
         </div>
       </div>
 
-      <div class="metiers-info-wrapper">
+      <div class="metiers-info-wrapper col responsive-sm">
         <div class="clearfix">
           <video preload="auto" class="clearfix" style="width: 100%; height: auto;" webkit-playsinline
                  poster="img/thumbs/ege_plomberie.png">
@@ -72,9 +74,11 @@
           <p>Fraîcheur et luxe se mêlent pour vous offrir le confort et la santé d’une merveilleuse salle de bain, votre
             bien-être est notre priorité.</p>
         </div>
-        </di
-
       </div>
+    </div>
+
+
+    </div>
 
   </ion-content>
 

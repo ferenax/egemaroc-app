@@ -1,69 +1,118 @@
 <ion-view view-title="Engagements">
   <ion-content has-bouncing="false" scroll="false" cache-view="false" id="pres">
-    <div class="header-engagements">
-        <div class="row">
-            <div class=" col col-50">
-                <h2 class="title">UN SEUL <span style="white-space: nowrap;">ENGAGEMENT,</span><br> VOUS SERVIR.</h2></div>
-                <div class="col"><img src="img/engagement.png"></div>
-            </div>
+    <div class="ege-header" ng-style="{'background':viewColor}">
+      <div class="row">
+        <div class="col col-center col-50">
+          <h2 class="title">UN SEUL <br>
+            <span style="white-space: nowrap;">ENGAGEMENT,</span><br>
+            VOUS SERVIR.</h2></div>
+        <div class="col col-center">
+          <img src="img/engagement.png">
         </div>
+      </div>
     </div>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <ion-scroll>
+            <section class="certification">
+              <div class="certification-ribbon">
+                <img src="img/certifications/iso-9001.png">
+              </div>
+              <div class="certification-content">
+                <h3>ISO 9001</h3>
+                <hr>
+                <p>
+                  La norme <strong>ISO 9001</strong> définit une série d’exigences concernant la mise en place d’un
+                  système
+                  de
+                  gestion de la
+                  qualité dans un organisme, quels que soient sa taille et son secteur d’activité. Elle fait partie de
+                  la
+                  série
+                  des normes ISO 9000. Elle a été créée en 1987 et est régulièrement révisée depuis. Sa première
+                  révision
+                  date
+                  de
+                  1994, la suivante de 2000, qui a intégré la notion de processus, et la dernière de 2015 a été publiée
+                  par
+                  le
+                  sous-comité SC 2 du comité technique ISO/TC 176.
+                </p>
+              </div>
 
-    <ion-slides options="options" slider="data.slider">
-      <ion-slide-page>
-        <section class="certification">
-          <div class="certification-ribbon">
-            <img src="img/certifications/iso-9001.png">
-          </div>
-          <p>
-            La norme <strong>ISO 9001</strong> définit une série d’exigences concernant la mise en place d’un système
-            de
-            gestion de la
-            qualité dans un organisme, quels que soient sa taille et son secteur d’activité. Elle fait partie de la
-            série
-            des normes ISO 9000. Elle a été créée en 1987 et est régulièrement révisée depuis. Sa première révision
-            date
-            de
-            1994, la suivante de 2000, qui a intégré la notion de processus, et la dernière de 2015 a été publiée par
-            le
-            sous-comité SC 2 du comité technique ISO/TC 176.
-          </p>
-        </section>
-      </ion-slide-page>
-      <ion-slide-page>
-        <section class="certification">
-          <div class="certification-ribbon">
-            <img src="img/certifications/iso-ohsas.png">
-          </div>
-          <p>
-            La norme <strong>OHSAS 18001</strong> indique la méthode de mise en place d’un <strong>management de la
-            santé et
-            la sécurité au travail</strong>
-            et les exigences qu’il recquiert. L’objectif est d’obtenir une meilleure gestion des risques afin de
-            réduire
-            le
-            nombre d’accidents, de se conformer à la législation et d’améliorer les performances. (Cette certification
-            est
-            en cours de préparation)
-          </p>
-        </section>
-      </ion-slide-page>
-      <ion-slide-page>
-        <section class="certification">
-          <div class="certification-ribbon">
-            <img src="img/certifications/iso-9001.png">
-          </div>
-          <p>
-            <strong>ISO 14001</strong> est la dénomination d’une norme qui concerne le management environnemental et
-            dont les caractères sont
-            propres à rassurer les consommateurs soucieux de l’environnement. Elle est une partie intégrante des
-            normes
-            d’organisation et l’ISO ou Organisation Internationale de la Normalisation (International Organisation for
-            Standardization) en est l’organisme créateur. (Cette certification est en cours de préparation)
-          </p>
-        </section>
-      </ion-slide-page>
-    </ion-slides>
-</ion-content>
+            </section>
+          </ion-scroll>
+        </div>
+        <div class="swiper-slide">
+          <ion-scroll>
+            <section class="certification">
+              <div class="certification-ribbon">
+                <img src="img/certifications/iso-ohsas.png">
+              </div>
+              <div class="certification-content">
+                <h3>OHSAS 18001</h3>
+                <hr>
+                <p>
+                  La norme <strong>OHSAS 18001</strong> indique la méthode de mise en place d’un <strong>management de
+                  la
+                  santé et
+                  la sécurité au travail</strong>
+                  et les exigences qu’il recquiert. L’objectif est d’obtenir une meilleure gestion des risques afin de
+                  réduire
+                  le
+                  nombre d’accidents, de se conformer à la législation et d’améliorer les performances. (Cette
+                  certification
+                  est
+                  en cours de préparation)
+                </p>
+              </div>
+
+            </section>
+          </ion-scroll>
+
+
+        </div>
+        <div class="swiper-slide">
+          <ion-scroll>
+            <section class="certification">
+              <div class="certification-ribbon">
+                <img src="img/certifications/iso-9001.png">
+              </div>
+              <div class="certification-content">
+                <h3>ISO 14001</h3>
+                <hr>
+                <p>
+                  <strong>ISO 14001</strong> est la dénomination d’une norme qui concerne le management environnemental
+                  et
+                  dont les caractères sont
+                  propres à rassurer les consommateurs soucieux de l’environnement. Elle est une partie intégrante des
+                  normes
+                  d’organisation et l’ISO ou Organisation Internationale de la Normalisation (International Organisation
+                  for
+                  Standardization) en est l’organisme créateur. (Cette certification est en cours de préparation)
+                </p>
+              </div>
+
+            </section>
+          </ion-scroll>
+
+
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </ion-content>
 </ion-view>
 

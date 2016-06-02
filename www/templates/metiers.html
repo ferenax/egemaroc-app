@@ -1,73 +1,88 @@
 <ion-view view-title="Metiers" cache-view="false">
-    <ion-content has-bouncing="false" id="metiers">
+  <ion-content has-bouncing="false" on-scroll="myScroll()"  delegate-handle="scrollItem" id="metiers">
 
-        <div class="header-metiers">
-            <div class="row">
-                <div class="col col-50">
-                    <h2>Nos metiers,<br/>un savoir<br/> faire.</h2></div>
+    <div class="ege-header" ng-style="{'background':viewColor}">
+      <div class="row">
+        <div class="col col-center col-50">
+          <h2>Nos metiers,<br/>un savoir<br/> faire.</h2></div>
 
-                <div class="col"><img src="img/metiers.png"></div>
-            </div>
+        <div class="col col-center">
+          <img src="img/metiers.png">
         </div>
+      </div>
+    </div>
 
-        <div class="row responsive-sm">
+    <div class="row responsive-sm">
 
-            <div class="metiers-info-wrapper">
-                <div class="clearfix">
-                    <video preload="auto" class=" clearfix" style="width: 100%; height: auto;" autoplay loop webkit-playsinline>
-
-                        <source src="videos/ege_energies_renouvelables.mp4" type='video/webm' />
-                        <source src="videos/ege_energies_renouvelables.mp4" type='video/mp4' />
-                    </video>
-                </div>
-                <div class="metiers-info">
-                    <h4>EFFICACITÉ ENERGÉTIQUE ET EnR</h4>
-                    <p>Consommez la même quantité d’energie et produisez-en trois fois plus. Nos systèmes de récupération d’énergie incluent les puits canadiens, la pompe à chaleur, ou l’énergie solaire.</p>
-                </div>
-            </div>
-
-            <div class="metiers-info-wrapper">
-                <div class="clearfix">
-                    <video preload="auto" class="clearfix" style="width: 100%; height: auto;" autoplay loop webkit-playsinline>
-                        <source src="videos/ege_climatisation.mp4" type='video/webm' />
-                        <source src="videos/ege_climatisation.mp4" type='video/mp4' />
-                    </video>
-                </div>
-                <div class="metiers-info">
-                    <h4>CLIMATISATION ET VENTILATION</h4>
-                    <p>Raffraîchissez-vous les idées et vivez le confort d’une vraie climatisation de pointe. Finies les chambres trop froides, profitez dès maintenant d’une ventilation et d’un désenfumage de qualité supérieure.</p>
-                </div>
-            </div>
-
-            <div class="metiers-info-wrapper">
-                <div class="clearfix">
-                    <video preload="auto" class="clearfix" style="width: 100%; height: auto;" autoplay loop webkit-playsinline>
-                        <source src="videos/ege_chauffage.mp4" type='video/webm' />
-                        <source src="videos/ege_chauffage.mp4" type='video/mp4' />
-                    </video>
-                </div>
-                <div class="metiers-info">
-                    <h4>CHAUFFAGE CENTRAL</h4>
-                    <p>Passez l’hiver au chaud avec nos solutions de chauffage central, travaillez et dormez bien au chaud avec EGE.</p>
-                </div>
-            </div>
-
-            <div class="metiers-info-wrapper">
-                <div class="clearfix">
-                    <video preload="auto" class="clearfix" style="width: 100%; height: auto;" autoplay loop webkit-playsinline>
-                        <source src="videos/ege_plomberie.mp4" type='video/webm' />
-                        <source src="videos/ege_plomberie.mp4" type='video/mp4' />
-                    </video>
-                </div>
-                <div class="metiers-info">
-                    <h4>PLOMBERIE ET SANITAIRE</h4>
-                    <p>Fraîcheur et luxe se mêlent pour vous offrir le confort et la santé d’une merveilleuse salle de bain, votre bien-être est notre priorité.</p>
-                </div>
-            </div>
-
+      <div class="metiers-info-wrapper col responsive-lg">
+        <div class="col clearfix">
+          <video loop preload="auto" class=" clearfix" style="width: 100%; height: auto;" webkit-playsinline
+                 poster="img/thumbs/ege_energie.png">
+            <source src="videos/ege_energies_renouvelables.mp4" type='video/webm'/>
+            <source src="videos/ege_energies_renouvelables.mp4" type='video/mp4'/>
+          </video>
         </div>
+        <div class="col metiers-info">
+          <h4>EFFICACITÉ ENERGÉTIQUE ET EnR</h4>
+          <p>Consommez la même quantité d’energie et produisez-en trois fois plus. Nos systèmes de récupération
+            d’énergie incluent les puits canadiens, la pompe à chaleur, ou l’énergie solaire.</p>
+        </div>
+      </div>
+
+      <div class="metiers-info-wrapper col responsive-lg">
+        <div class="clearfix">
+          <video loop preload="auto" class="clearfix" style="width: 100%; height: auto;" webkit-playsinline
+                 poster="img/thumbs/ege_climatisation.png">
+            <source src="videos/ege_climatisation.mp4" type='video/webm'/>
+            <source src="videos/ege_climatisation.mp4" type='video/mp4'/>
+          </video>
+        </div>
+        <div class="metiers-info">
+          <h4>CLIMATISATION ET VENTILATION</h4>
+          <p>Raffraîchissez-vous les idées et vivez le confort d’une vraie climatisation de pointe. Finies les chambres
+            trop froides, profitez dès maintenant d’une ventilation et d’un désenfumage de qualité supérieure.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="row responsive-sm">
+      <div class="metiers-info-wrapper col responsive-md">
+        <div class="clearfix">
+          <video loop preload="auto" class="clearfix" style="width: 100%; height: auto;" webkit-playsinline
+                 poster="img/thumbs/ege_chauffage.png">
+            <source src="videos/ege_chauffage.mp4" type='video/webm'/>
+            <source src="videos/ege_chauffage.mp4" type='video/mp4'/>
+          </video>
+        </div>
+        <div class="metiers-info">
+          <h4>CHAUFFAGE CENTRAL</h4>
+          <p>Passez l’hiver au chaud avec nos solutions de chauffage central, travaillez et dormez bien au chaud avec
+            EGE.</p>
+        </div>
+      </div>
+
+      <div class="metiers-info-wrapper col responsive-md">
+        <div class="clearfix">
+          <video loop preload="auto" class="clearfix" style="width: 100%; height: auto;" webkit-playsinline
+                 poster="img/thumbs/ege_plomberie.png">
+            <source src="videos/ege_plomberie.mp4" type='video/webm'/>
+            <source src="videos/ege_plomberie.mp4" type='video/mp4'/>
+          </video>
+        </div>
+        <div class="metiers-info">
+          <h4>PLOMBERIE ET SANITAIRE</h4>
+          <p>Fraîcheur et luxe se mêlent pour vous offrir le confort et la santé d’une merveilleuse salle de bain, votre
+            bien-être est notre priorité.</p>
+        </div>
+      </div>
+    </div>
 
 
-    </ion-content>
+    </div>
+
+  </ion-content>
 
 </ion-view>
+
+
+

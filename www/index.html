@@ -7,6 +7,7 @@
     <title>EGE</title>
     <!-- compiled css output -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/Swiper/dist/css/swiper.min.css" rel="stylesheet">
     <link href="css/ionic.app.css" rel="stylesheet">
 
     <!-- jQuery -->
@@ -20,6 +21,8 @@
     <script src="js/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
 
+    <script src="lib/Swiper/dist/js/swiper.min.js"></script>
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
@@ -30,15 +33,9 @@
 </head>
 
 <body ng-app="egemaroc">
-    <div id="swiffycontainer" class="custom-overlay" style="width: 100%; height: auto">
-    </div>
-    <ion-nav-view class="item-text-wrap"></ion-nav-view>
-    <script>
-        var stage = new swiffy.Stage(document.getElementById('swiffycontainer')
-            , swiffyobject, {});
 
-        stage.start();
-    </script>
+    <ion-nav-view class="item-text-wrap"></ion-nav-view>
+
 </body>
 
 </html>

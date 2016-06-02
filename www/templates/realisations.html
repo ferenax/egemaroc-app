@@ -1,158 +1,156 @@
 <ion-view view-title="Réalisations" cache-view="false">
 
 
-  <ion-content has-bouncing="false" id="realisations">
+    <ion-content has-bouncing="false" id="realisations">
 
-    <div class="header-realisations">
-      <div class="row">
-        <div class=" col col-50">
-          <h2 class="title">Nos projets,<br/>des
-            clients satisfaits.</h2></div>
+        <div class="ege-header" ng-style="{'background':viewColor}">
+            <div class="row">
+                <div class=" col col-center col-50">
+                    <h2 class="title">
+            Nos projets,<br/>
+            des clients<br>
+            satisfaits.</h2>
+                </div>
+                <div class="col col-center">
+                    <img src="img/realisation.png">
+                </div>
+            </div>
+        </div>
 
-        <div class="col"><img src="img/realisation.png"></div>
-      </div>
-    </div>
+        <div class="content-realisations row responsive-sm">
 
-    <ion-list class="content-realisations">
+            <div ng-repeat="partner in partners | filter : {category:filtText}" class="col col-50">
+                <article class="caption">
+                    <img class="caption__media" ng-src="{{partner.pictureUrl}}">
+                    <div class="caption__overlay">
+                        <h1 class="caption__overlay__title item-text-wrap">{{partner.name}}</h1>
+                        <ul class=" caption__overlay__content">
+                            {{partner.description}}
+                        </ul>
+                    </div>
+                </article>
 
-      <ion-item ng-repeat="partner in partners | filter : {category:filtText}" class="item item-image">
-        <img class="caption__media" ng-src="{{partner.pictureUrl}}">
-        <div class="caption__overlay">
-          <h1 class="caption__overlay__title item-text-wrap">{{partner.name}}</h1>
-          <ul class=" caption__overlay__content">
-            {{partner.description}}
-          </ul>
+
+            </div>
+
 
         </div>
 
-      </ion-item>
+
+    </ion-content>
 
 
-    </ion-list>
+    <div id="fixedbutton">
+        <ul id="button-list" ng-click="scrollTop()">
+
+            <li class="hidden" ng-class="{active:isSelected(8)}">
+                <a href ng-click="select(8)">
+                    <h5>Restaurants</h5>
+                    <button class="button button-categ fx-button"><i class="fa fa-cutlery" aria-hidden="true"></i></button>
+                </a>
+
+            </li>
+            <li class="hidden" ng-class="{active:isSelected(7)}">
+                <a href ng-click="select(7)">
+                    <h5>Hospitalier</h5>
+                    <button class="button button-categ fx-button">
+                        <i class="fa fa-medkit" aria-hidden="true"></i></button>
+                </a>
+
+            </li>
+            <li class="hidden" ng-class="{active:isSelected(6)}">
+                <a href ng-click="select(6)">
+                    <h5>Bureaux</h5>
+                    <button class="button  button-categ fx-button"><i class="fa fa-briefcase" aria-hidden="true"></i></button>
+                </a>
+
+            </li>
+            <li class="hidden" ng-class="{active:isSelected(5)}">
+                <a href ng-click="select(5)">
+                    <h5>Industriel</h5>
+                    <button class="button button-categ fx-button"><i class="fa fa-industry" aria-hidden="true"></i></button>
+                </a>
+
+            </li>
+            <li class="hidden" ng-class="{active:isSelected(4)}">
+                <a href ng-click="select(4)">
+                    <h5>Habitation</h5>
+                    <button class="button button-categ fx-button"><i class="fa fa-home" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </li>
+            <li class="hidden" ng-class="{active:isSelected(3)}">
+                <a href ng-click="select(3)">
+                    <h5>Touristique</h5>
+                    <button class="button button-categ fx-button"><i class="fa fa-suitcase" aria-hidden="true"></i></button>
+                </a>
+
+            </li>
+            <li class="hidden" ng-class="{active:isSelected(2)}">
+                <a href ng-click="select(2)">
+                    <h5>EnR et EE</h5>
+                    <button class="button button-categ fx-button"><i class="fa fa-sun-o" aria-hidden="true"></i></button>
+                </a>
+
+            </li>
+            <li class="hidden" ng-class="{active:isSelected(1)}">
+                <a href ng-click="select(1)">
+                    <h5>All</h5>
+                    <button class="button button-categ fx-button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </a>
+
+            </li>
 
 
-  </ion-content>
+        </ul>
+    </div>
+
+    <div class="filter-overlay"></div>
+
+    <button id="btn-toggle" class=" button button-toggle  fx-button" style="clear:both;"><i class="fa fa-sliders" aria-hidden="true"></i>
+    </button>
+    <script>
+        var $toggle = false;
+        jQuery(".button-toggle, #fixedbutton li a").click(function () {
+
+            if (!jQuery(".filter-overlay").hasClass('overlay-shown')) {
+                jQuery(".filter-overlay").addClass('overlay-shown');
+            } else {
+                jQuery(".filter-overlay").removeClass('overlay-shown');
+            }
+
+            jQuery("#button-list li").each(function (i, li) {
+                var $list = jQuery(this).closest('ul');
+
+                $list.delay(50).queue(function () {
+                    if (jQuery(li).hasClass('hidden')) {
+                        jQuery(li).removeClass('hidden');
+
+                        jQuery(li).addClass('shown');
+                        $list.dequeue();
+                        $toggle = true;
 
 
-  <div id="fixedbutton">
-    <ul id="button-list" ng-click="scrollTop()">
+                        jQuery(".filter-overlay").click(function () {
 
-      <li class="hidden" ng-class="{active:isSelected(8)}">
-        <a href ng-click="select(8)">
-          <h5>Restaurants</h5>
-          <button class="button button-categ fx-button"><i class="fa fa-cutlery" aria-hidden="true"></i></button>
-        </a>
+                            jQuery(li).removeClass('shown');
+                            jQuery(".filter-overlay").removeClass('overlay-shown');
 
-      </li>
-      <li class="hidden" ng-class="{active:isSelected(7)}">
-        <a href ng-click="select(7)">
-          <h5>Hospitalier</h5>
-          <button class="button button-categ fx-button">
-            <i class="fa fa-medkit"
-               aria-hidden="true"></i></button>
-        </a>
+                            jQuery(li).addClass('hidden');
+                            $list.dequeue();
 
-      </li>
-      <li class="hidden" ng-class="{active:isSelected(6)}">
-        <a href ng-click="select(6)">
-          <h5>Bureaux</h5>
-          <button class="button  button-categ fx-button"><i class="fa fa-briefcase"
-                                                            aria-hidden="true"></i></button>
-        </a>
+                        })
+                    } else if (jQuery(li).hasClass('shown')) {
 
-      </li>
-      <li class="hidden" ng-class="{active:isSelected(5)}">
-        <a href ng-click="select(5)">
-          <h5>Industriel</h5>
-          <button class="button button-categ fx-button"><i class="fa fa-industry"
-                                                           aria-hidden="true"></i></button>
-        </a>
+                        jQuery(li).removeClass('shown');
 
-      </li>
-      <li class="hidden" ng-class="{active:isSelected(4)}">
-        <a href ng-click="select(4)">
-          <h5>Habitation</h5>
-          <button class="button button-categ fx-button"><i class="fa fa-home"
-                                                           aria-hidden="true"></i>
-          </button>
-        </a>
-      </li>
-      <li class="hidden" ng-class="{active:isSelected(3)}">
-        <a href ng-click="select(3)">
-          <h5>Touristique</h5>
-          <button class="button button-categ fx-button"><i class="fa fa-suitcase"
-                                                           aria-hidden="true"></i></button>
-        </a>
+                        jQuery(li).addClass('hidden');
+                        $list.dequeue();
+                    }
+                });
+            });
 
-      </li>
-      <li class="hidden" ng-class="{active:isSelected(2)}">
-        <a href ng-click="select(2)">
-          <h5>Energie</h5>
-          <button class="button button-categ fx-button"><i class="fa fa-sun-o"
-                                                           aria-hidden="true"></i></button>
-        </a>
-
-      </li>
-      <li class="hidden" ng-class="{active:isSelected(1)}">
-        <a href ng-click="select(1)">
-          <h5>All</h5>
-          <button class="button button-categ fx-button"><i class="fa fa-minus"
-                                                           aria-hidden="true"></i></button>
-        </a>
-
-      </li>
-
-
-    </ul>
-  </div>
-
-  <div class="filter-overlay"></div>
-
-  <button id="btn-toggle" class=" button button-toggle  fx-button" style="clear:both;"><i class="fa fa-sliders"
-                                                                                          aria-hidden="true"></i>
-  </button>
-  <script>
-    var $toggle = false;
-    jQuery(".button-toggle, #fixedbutton li a").click(function () {
-
-      if (!jQuery(".filter-overlay").hasClass('overlay-shown')) {
-        jQuery(".filter-overlay").addClass('overlay-shown');
-      } else {
-        jQuery(".filter-overlay").removeClass('overlay-shown');
-      }
-
-      jQuery("#button-list li").each(function (i, li) {
-        var $list = jQuery(this).closest('ul');
-
-        $list.delay(50).queue(function () {
-          if (jQuery(li).hasClass('hidden')) {
-            jQuery(li).removeClass('hidden');
-
-            jQuery(li).addClass('shown');
-            $list.dequeue();
-            $toggle = true;
-
-
-            jQuery(".filter-overlay").click(function () {
-
-              jQuery(li).removeClass('shown');
-              jQuery(".filter-overlay").removeClass('overlay-shown');
-
-              jQuery(li).addClass('hidden');
-              $list.dequeue();
-
-            })
-          } else if (jQuery(li).hasClass('shown')) {
-
-            jQuery(li).removeClass('shown');
-
-            jQuery(li).addClass('hidden');
-            $list.dequeue();
-          }
         });
-      });
-
-    });
-  </script>
+    </script>
 
 </ion-view>

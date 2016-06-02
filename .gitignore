@@ -5,4 +5,9 @@ node_modules/
 platforms/
 plugins/
 *.DS_Store
+<<<<<<< HEAD
 /.idea
+=======
+/.idea
+.DS_Store
+>>>>>>> 1b611e7a7b2fa5d2d69b0f1449981dcfd464d22c

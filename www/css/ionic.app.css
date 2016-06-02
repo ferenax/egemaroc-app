@@ -9938,7 +9938,8 @@ ion-view[view-title="EGE"] ion-content {
   padding: 30px 20px;
   background: transparent;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background: rgba(19, 128, 167, 0.8); }
   .content-pres h4 {
     text-transform: uppercase;
     color: #fff;
@@ -10272,9 +10273,16 @@ ion-side-menu {
 ion-view[view-title="EGE"] .swiper-pagination-bullet {
   background: #fff; }
 
+ion-view[view-title="Engagements"] .swiper-container {
+  position: relative; }
+
 ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagination {
   bottom: auto;
   top: 0; }
+
+ion-view[view-title="Engagements"] .swiper-container,
+ion-view[view-title="Engagements"] .swiper-slide {
+  height: 400px; }
 
 .filter-overlay {
   position: fixed;
@@ -10297,17 +10305,19 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
 /*
  * VIDEO BACKGROUND (PRESENTATION)
  */
+/*
 .video-overlay {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(19, 128, 167, 0.8);
-  z-index: -10;
-  position: absolute; }
-
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 128, 167, 0.8);
+    z-index: -10;
+    position: absolute;
+}
+*/
 #bgvid {
   position: absolute;
   top: 50%;
@@ -10352,7 +10362,8 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
 /*
  * ENGAGEMENT SLIDER
  */
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   top: 20%; }
 
 .swiper-button-prev {
@@ -10367,7 +10378,8 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
 @media all and (max-width: 320px) {
   .ege-header h2 {
     font-size: 26px; }
-  .swiper-button-prev, .swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     display: none; } }
 
 @media all and (min-width: 320px) and (max-width: 567px) {
@@ -10375,7 +10387,8 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
     font-size: 30px; }
   .certification-ribbon img {
     width: 240px; }
-  .swiper-button-prev, .swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     display: none; } }
 
 @media all and (min-width: 568px) and (max-width: 767px) {
@@ -10389,7 +10402,8 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
     margin-bottom: 10px; }
     .content-pres p:first-of-type {
       margin-top: 40px; }
-  .swiper-button-prev, .swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     display: none; } }
 
 @media all and (min-width: 768px) and (max-width: 1048px) {
@@ -10441,3 +10455,17 @@ ion-view[view-title="Engagements"] .swiper-container-horizontal > .swiper-pagina
 @media all and (max-height: 500px) {
   ion-side-menu ion-content header {
     display: none; } }
+
+@media all and (max-height: 400px) {
+  #button-list {
+    overflow: hidden;
+    width: 300px; }
+    #button-list li {
+      width: 50%;
+      float: left;
+      overflow: hidden; } }
+
+.slider-pager {
+  top: 0;
+  bottom: initial;
+  margin-top: 2%; }

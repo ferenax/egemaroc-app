@@ -226,56 +226,32 @@ angular.module('egemaroc.controllers', [])
 })
 
 
-.controller('EngagementsController', function ($scope, $stateParams, $rootScope) {
+.controller('EngagementsController', function ($scope, $stateParams, $rootScope, $timeout, $ionicSlideBoxDelegate, $ionicScrollDelegate) {
 
 
-    $scope.options = {
-        loop: false
-        , effect: 'fade'
-        , speed: 500
-        , autoplay: 3000
-    };
-
-    $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
-        // data.slider is the instance of Swiper
-        $scope.slider = data.slider;
-    });
-
-    $scope.$on("$ionicSlides.slideChangeStart", function (event, data) {
-        console.log('Slide change is beginning');
-    });
-
-    $scope.$on("$ionicSlides.slideChangeEnd", function (event, data) {
-        // note: the indexes are 0-based
-        $scope.activeIndex = data.activeIndex;
-        $scope.previousIndex = data.previousIndex;
-    });
-
-
-    $scope.$on('$ionicView.loaded', function () {
-        var mySwiper = new Swiper('.swiper-container', {
-            // Optional parameters
-            direction: 'horizontal'
-            , loop: true
-            , effect: 'coverflow',
-
-            // If we need pagination
-            pagination: '.swiper-pagination',
-
-            // Navigation arrows
-            nextButton: '.swiper-button-next'
-            , prevButton: '.swiper-button-prev',
-
-            // And if we need scrollbar
-            scrollbar: '.swiper-scrollbar'
-        , })
-    });
 
     $scope.$on('$ionicView.beforeEnter', function () {
         $rootScope.viewColor = '#6ec33f';
         $rootScope.viewBorder = '#6ec33f';
     });
 
+
+    $scope.data = {};
+    $scope.data.currSlide = $ionicSlideBoxDelegate.currentIndex();
+    console.log('Current Slide = ' + $scope.data.currSlide);
+
+
+    $scope.slideChanged = function () {
+
+
+        $scope.data.currSlide = $ionicSlideBoxDelegate.currentIndex();
+        console.log('the slide changed to : ' + $scope.data.currSlide);
+
+        $timeout(function () {
+            $ionicScrollDelegate.resize();
+        }, 50);
+
+    };
 
 })
 

@@ -107,7 +107,6 @@ angular.module('egemaroc.controllers', [])
 
     $scope.doOnOrientationChange = function () {
         $scope.sequentialPlay();
-        $scope.myScroll();
     };
 
     $scope.sequentialPlay = function () {

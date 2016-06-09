@@ -10184,6 +10184,7 @@ ion-view[view-title="Réalisations"] ion-content {
 .certification {
   padding: 20px; }
   .certification .certification-ribbon {
+    margin: 25px 0;
     text-align: center; }
   .certification h3 {
     text-transform: uppercase;
@@ -10405,6 +10406,23 @@ ion-view[view-title="Engagements"] .swiper-slide {
   .swiper-button-prev,
   .swiper-button-next {
     display: none; } }
+
+@media all and (min-width: 768px) {
+  .bar-header {
+    height: 60px; }
+  .bar .button.button-icon:before {
+    font-size: 40px;
+    line-height: 40px; }
+  .bar .title {
+    height: 60px;
+    font-size: 20px;
+    line-height: 60px; }
+  .buttons-left {
+    display: table;
+    height: 100%; }
+    .buttons-left .left-buttons {
+      display: table-cell;
+      vertical-align: middle; } }
 
 @media all and (min-width: 768px) and (max-width: 1048px) {
   .ege-header h2 {

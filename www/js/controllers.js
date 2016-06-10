@@ -90,7 +90,9 @@ angular.module('egemaroc.controllers', [])
 
     $scope.$on("$ionicView.loaded", function () {
       $scope.doOnOrientationChange();
-      $window.addEventListener('orientationchange', $scope.doOnOrientationChange);
+      if (ionic.Platform.platform() == 'ios') {
+        $window.addEventListener('orientationchange', $scope.doOnOrientationChange);
+      }
     });
 
     $scope.doOnOrientationChange = function () {
@@ -125,7 +127,7 @@ angular.module('egemaroc.controllers', [])
           });
         }
       }
-    }
+    };
 
 
     $scope.myScroll = function () {

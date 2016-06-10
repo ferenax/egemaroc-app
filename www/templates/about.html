@@ -1,34 +1,80 @@
 <ion-view view-title="Présentation" cache-view="false">
-    <ion-content has-bouncing="false" id="pres">
-        <div class="ege-header" ng-style="{'background':viewColor}">
-            <div class="row">
-                <div class=" col col-center col-50">
-                    <h2 class="title">DES PROJETS ET<br>
+  <ion-content has-bouncing="false" id="pres">
+    <div class="ege-header" ng-style="{'background':viewColor}">
+      <div class="row">
+        <div class=" col col-center col-50">
+          <h2 class="title">DES PROJETS ET<br>
             DES SERVICES<br>
             UNIQUES.</h2></div>
-                <div class="col col-center">
-                    <img src="img/presentation.png">
-                </div>
-            </div>
+        <div class="col col-center">
+          <img src="img/presentation.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="content-pres">
+      <div class="video-overlay">
+      </div>
+
+      <video autoplay loop webkit-playsinline id="bgvid">
+        <source src="videos/ege_plomberie.mp4" type='video/webm'/>
+        <source src="videos/ege_plomberie.mp4" type='video/mp4'/>
+      </video>
+      <div class="video-text">
+        <h4>Apprenez à nous connaître.</h4>
+        <hr>
+        <p>EGE (Entreprise Génie Energétique) est une entreprise Marocaine leader dans les domaines des énergies
+          renouvelables, de la climatisation, du chauffage et de la plomberie.</p>
+        <p>À la pointe des nouvelles technologies, EGE n’a cessé de créer de nouvelles activités et partenariats
+          oeuvrant dans les différents secteurs : touristique, habitation, énergie renouvelable, industriel, et
+          publique.
+        </p>
+        <p>Aujourd’hui la notoriété d’EGE est reconnue par son expérience, ses compétences, son savoir-faire, son
+          dynamisme, en répondant pleinement aux exigences spécifiques de la clientèle.</p>
+      </div>
+
+    </div>
+    <section class="references">
+      <h4>Quelques références.</h4>
+      <hr>
+      <div class="row responsive-md">
+        <div class="row responsive-sm">
+          <div class="col col-center">
+            <img src="img/refs/alliances.png" alt="partenaires">
+          </div>
+          <div class="col col-center">
+            <img src="img/refs/atlas_hospitality.png" alt="partenaires">
+          </div>
+        </div>
+        <div class="row responsive-sm">
+          <div class="col col-center">
+            <img src="img/refs/dar_el_kenz.png" alt="partenaires">
+          </div>
+          <div class="col col-center">
+            <img src="img/refs/klk.png" alt="partenaires">
+          </div>
         </div>
 
-        <div class="content-pres">
-            <div class="video-overlay">
-            </div>
-
-           <video autoplay loop webkit-playsinline id="bgvid">
-    <source src="videos/ege_plomberie.mp4" type='video/webm' />
-    <source src="videos/ege_plomberie.mp4" type='video/mp4' />
-</video>
-            <div class="video-text">
-                <h4>Apprenez à nous connaître.</h4>
-                <hr>
-                <p>EGE (Entreprise Génie Energétique) est une entreprise Marocaine leader dans les domaines des énergies renouvelables, de la climatisation, du chauffage et de la plomberie.</p>
-                <p>À la pointe des nouvelles technologies, EGE n’a cessé de créer de nouvelles activités et partenariats oeuvrant dans les différents secteurs : touristique, habitation, énergie renouvelable, industriel, et publique.
-                </p>
-                <p>Aujourd’hui la notoriété d’EGE est reconnue par son expérience, ses compétences, son savoir-faire, son dynamisme, en répondant pleinement aux exigences spécifiques de la clientèle.</p>
-            </div>
-
+      </div>
+      <div class="row responsive-md">
+        <div class="row responsive-sm">
+          <div class="col col-center">
+            <img src="img/refs/ocp.png" alt="partenaires">
+          </div>
+          <div class="col col-center">
+            <img src="img/refs/prestigia.png" alt="partenaires">
+          </div>
         </div>
-    </ion-content>
+        <div class="row responsive-sm">
+          <div class="col col-center">
+            <img src="img/refs/relax.png" alt="partenaires">
+          </div>
+          <div class="col col-center">
+            <img src="img/refs/tgcc.png" alt="partenaires">
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </ion-content>
 </ion-view>

@@ -219,6 +219,33 @@ ion-view[view-title="Réalisations"] ion-content {
   }
 }
 
+.references {
+  padding: 20px 10px;
+  text-align: center;
+  h4 {
+    text-transform: uppercase;
+    color: #444;
+    text-align: left;
+    margin-bottom: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    word-wrap: initial;
+  }
+  hr {
+       width: 60px;
+       float: left;
+       border: none;
+       height: 3px;
+       color: white;
+       background-color: #444;
+     }
+  img {
+    opacity: .8;
+    width: 90%;
+    max-width: 200px;
+  }
+}
+
 .caption {
   position: relative;
   overflow: hidden;
@@ -754,6 +781,10 @@ ion-view[view-title="Engagements"] {
 }
 
 @media all and (min-width: 768px) and (max-width: 1048px) {
+  .references h4{
+    font-size: 28px;
+  }
+
   .ege-header {
     h2 {
       font-size: 55px;
@@ -789,24 +820,27 @@ ion-view[view-title="Engagements"] {
 }
 
 @media all and (min-width: 1049px) {
+  .references h4{
+    font-size: 35px;
+  }
   .ege-header {
     h2 {
       font-size: 65px;
     }
   }
   .content-pres {
-    padding: 120px 20px;
+    padding: 60px 20px;
     h4 {
-      font-size: 55px;
-      line-height: 70px;
-      max-width: 180px;
+      font-size: 45px;
+      line-height: 55px;
+      max-width: 140px;
     }
     p {
-      font-size: 22px;
-      line-height: 26px;
-      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 15px;
       &:first-of-type {
-        margin-top: 60px;
+        margin-top: 40px;
       }
     }
   }

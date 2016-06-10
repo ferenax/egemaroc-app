@@ -19,10 +19,7 @@ angular.module('egemaroc', ['ionic', 'egemaroc.controllers', 'ngCordova', 'ionic
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
-
-        setTimeout(function () {
-            navigator.splashscreen.hide();
-        }, 300);
+      
     });
 })
 

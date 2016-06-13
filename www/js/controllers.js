@@ -17,6 +17,23 @@ angular.module('egemaroc.controllers', [])
       $location.path(path);
     };
 
+    $scope.confirmDialog = function() {
+      console.log('Entered');
+      navigator.notification.confirm("Checkout this confirmation dialog", function(buttonIndex) {
+        switch(buttonIndex) {
+          case 1:
+            console.log("Decline Pressed");
+            break;
+          case 2:
+            console.log("Dont Care Pressed");
+            break;
+          case 3:
+            console.log("Accept Pressed");
+            break;
+        }
+      }, "Appeler ", [ "Non", "Oui", "Accept" ]);
+    };
+
     $http.get('js/data/partners.json')
       .success(function (data) {
         // The json data will now be in scope.

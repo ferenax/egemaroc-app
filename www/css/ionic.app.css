@@ -10133,7 +10133,7 @@ ion-view[view-title="Réalisations"] ion-content {
   min-width: 30px;
   min-height: 30px;
   display: inline-block;
-  line-height: 32px; }
+  line-height: 29px; }
   #button-list button:before {
     font-size: 18px;
     line-height: 30px; }
@@ -10150,11 +10150,18 @@ ion-view[view-title="Réalisations"] ion-content {
   font-size: 10px; }
 
 #button-list li {
-  text-align: right; }
-  #button-list li h5 {
-    color: #fff;
-    display: inline-block;
-    margin-right: 6px; }
+  text-align: right;
+  clear: both; }
+  #button-list li a {
+    display: block;
+    clear: both; }
+    #button-list li a button {
+      vertical-align: middle; }
+    #button-list li a span {
+      color: #fff;
+      display: inline-block;
+      margin-right: 6px;
+      line-height: 28px; }
 
 .partners-listing.ng-enter,
 .partners-listing.ng-leave,
@@ -10452,12 +10459,16 @@ ion-view[view-title="Engagements"] .swiper-slide {
     font-size: 28px; }
   .ege-header h2 {
     font-size: 55px; }
+  .box h1 {
+    font-size: 30px; }
+  .box h3 {
+    font-size: 25px; }
   .content-pres {
     padding: 60px 20px; }
     .content-pres h4 {
       font-size: 45px;
       line-height: 55px;
-      max-width: 140px; }
+      max-width: 180px; }
     .content-pres p {
       font-size: 18px;
       line-height: 22px;
@@ -10477,12 +10488,16 @@ ion-view[view-title="Engagements"] .swiper-slide {
     font-size: 35px; }
   .ege-header h2 {
     font-size: 65px; }
+  .box h1 {
+    font-size: 33px; }
+  .box h3 {
+    font-size: 28px; }
   .content-pres {
     padding: 60px 20px; }
     .content-pres h4 {
-      font-size: 45px;
-      line-height: 55px;
-      max-width: 140px; }
+      font-size: 65px;
+      line-height: 80px;
+      max-width: 200px; }
     .content-pres p {
       font-size: 18px;
       line-height: 22px;

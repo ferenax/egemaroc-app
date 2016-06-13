@@ -129,7 +129,6 @@ angular.module('egemaroc.controllers', [])
       }
     };
 
-
     $scope.myScroll = function () {
       if (ionic.Platform.platform() == 'ios' && $window.innerWidth < 568) {
         var videos = document.getElementsByTagName("video")

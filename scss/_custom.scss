@@ -232,13 +232,13 @@ ion-view[view-title="Réalisations"] ion-content {
     word-wrap: initial;
   }
   hr {
-       width: 60px;
-       float: left;
-       border: none;
-       height: 3px;
-       color: white;
-       background-color: #444;
-     }
+    width: 60px;
+    float: left;
+    border: none;
+    height: 3px;
+    color: white;
+    background-color: #444;
+  }
   img {
     opacity: .8;
     width: 90%;
@@ -373,7 +373,7 @@ ion-view[view-title="Réalisations"] ion-content {
   min-width: 30px;
   min-height: 30px;
   display: inline-block;
-  line-height: 32px;
+  line-height: 29px;
   &:before {
     font-size: 18px;
     line-height: 30px;
@@ -395,11 +395,21 @@ ion-view[view-title="Réalisations"] ion-content {
 
 #button-list li {
   text-align: right;
-  h5 {
-    color: #fff;
-    display: inline-block;
-    margin-right: 6px;
+  clear: both;
+  a {
+    display: block;
+    clear: both;
+    button {
+      vertical-align: middle;
+    }
+    span {
+      color: #fff;
+      display: inline-block;
+      margin-right: 6px;
+      line-height: 28px;
+    }
   }
+
 }
 
 .partners-listing.ng-enter,
@@ -734,6 +744,10 @@ ion-view[view-title="Engagements"] {
       font-size: 45px;
     }
   }
+  .box h1 {
+
+  }
+
   .content-pres {
     h4 {
       font-size: 35px;
@@ -777,11 +791,10 @@ ion-view[view-title="Engagements"] {
       vertical-align: middle;
     }
   }
-
 }
 
 @media all and (min-width: 768px) and (max-width: 1048px) {
-  .references h4{
+  .references h4 {
     font-size: 28px;
   }
 
@@ -789,14 +802,21 @@ ion-view[view-title="Engagements"] {
     h2 {
       font-size: 55px;
     }
-
+  }
+  .box {
+    h1 {
+      font-size: 30px;
+    }
+    h3 {
+      font-size: 25px;
+    }
   }
   .content-pres {
     padding: 60px 20px;
     h4 {
       font-size: 45px;
       line-height: 55px;
-      max-width: 140px;
+      max-width: 180px;
     }
     p {
       font-size: 18px;
@@ -820,7 +840,7 @@ ion-view[view-title="Engagements"] {
 }
 
 @media all and (min-width: 1049px) {
-  .references h4{
+  .references h4 {
     font-size: 35px;
   }
   .ege-header {
@@ -828,12 +848,20 @@ ion-view[view-title="Engagements"] {
       font-size: 65px;
     }
   }
+  .box {
+    h1 {
+      font-size: 33px;
+    }
+    h3 {
+      font-size: 28px;
+    }
+  }
   .content-pres {
     padding: 60px 20px;
     h4 {
-      font-size: 45px;
-      line-height: 55px;
-      max-width: 140px;
+      font-size: 65px;
+      line-height: 80px;
+      max-width: 200px;
     }
     p {
       font-size: 18px;

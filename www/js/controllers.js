@@ -17,21 +17,18 @@ angular.module('egemaroc.controllers', [])
       $location.path(path);
     };
 
-    $scope.confirmDialog = function() {
+    $scope.confirmDialog = function () {
       console.log('Entered');
-      navigator.notification.confirm("Checkout this confirmation dialog", function(buttonIndex) {
-        switch(buttonIndex) {
+      navigator.notification.confirm("Appeler +212 522 98 97 56 ?", function (buttonIndex) {
+        switch (buttonIndex) {
           case 1:
             console.log("Decline Pressed");
             break;
           case 2:
             console.log("Dont Care Pressed");
             break;
-          case 3:
-            console.log("Accept Pressed");
-            break;
         }
-      }, "Appeler ", [ "Non", "Oui", "Accept" ]);
+      }, "Appeler ", ["Non", "Oui"]);
     };
 
     $http.get('js/data/partners.json')

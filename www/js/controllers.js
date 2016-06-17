@@ -3,32 +3,46 @@ angular.module('egemaroc.controllers', [])
 
   .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ImageCacheFactory, $http) {
 
-
-    // With the new view caching in Ionic, Controllers are only called
-    // when they are recreated or on app start, instead of every page change.
-    // To listen for when this page is active (for example, to refresh data),
-    // listen for the $ionicView.enter event:
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
-
     var images = [];
 
     $scope.go = function (path) {
       $location.path(path);
     };
 
-    $scope.confirmDialog = function () {
-      console.log('Entered');
+    $scope.confirmCall = function () {
       navigator.notification.confirm("Appeler +212 522 98 97 56 ?", function (buttonIndex) {
         switch (buttonIndex) {
           case 1:
-            console.log("Decline Pressed");
             break;
           case 2:
-            console.log("Dont Care Pressed");
+            window.open('tel:+212522989756', '_system');
             break;
         }
-      }, "Appeler ", ["Non", "Oui"]);
+      }, "Appeler", ["Non", "Oui"]);
+    };
+
+    $scope.confirmMail = function () {
+      navigator.notification.confirm("Envoyer un mail à contact@egemaroc.com ?", function (buttonIndex) {
+        switch (buttonIndex) {
+          case 1:
+            break;
+          case 2:
+            window.open('mailto:contact@egemaroc.com', '_system');
+            break;
+        }
+      }, "Contact", ["Non", "Oui"]);
+    };
+
+    $scope.confirmMap = function () {
+      navigator.notification.confirm("Localiser sur Google Maps", function (buttonIndex) {
+        switch (buttonIndex) {
+          case 1:
+            break;
+          case 2:
+            window.open('http://www.google.com/maps/place/33.57356651425803,-7.64095894061029', '_system', 'location=yes')
+            break;
+        }
+      }, "Coordonnées", ["Non", "Oui"]);
     };
 
     $http.get('js/data/partners.json')
@@ -238,6 +252,8 @@ angular.module('egemaroc.controllers', [])
     $scope.$on('$ionicView.beforeEnter', function () {
       $rootScope.viewColor = '#6ec33f';
       $rootScope.viewBorder = '#6ec33f';
+      $ionicSlideBoxDelegate.$getByHandle('you-swipe-handle').update();
+      ionic.trigger('resize', {target: window});
     });
 
 
@@ -247,7 +263,6 @@ angular.module('egemaroc.controllers', [])
 
 
     $scope.slideChanged = function () {
-
 
       $scope.data.currSlide = $ionicSlideBoxDelegate.currentIndex();
       console.log('the slide changed to : ' + $scope.data.currSlide);
